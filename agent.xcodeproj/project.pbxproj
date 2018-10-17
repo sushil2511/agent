@@ -56,15 +56,39 @@
 		CDD1408821771A1200AD89B3 /* agent */ = {
 			isa = PBXGroup;
 			children = (
-				CDD1408921771A1200AD89B3 /* AppDelegate.swift */,
-				CDD1408B21771A1200AD89B3 /* ViewController.swift */,
-				CDD1408D21771A1200AD89B3 /* Main.storyboard */,
+				CDD140A021771A5400AD89B3 /* Model */,
+				CDD1409F21771A4B00AD89B3 /* Controller */,
+				CDD1409E21771A3900AD89B3 /* View */,
 				CDD1409321771A1200AD89B3 /* Assets.xcassets */,
-				CDD1409521771A1200AD89B3 /* LaunchScreen.storyboard */,
 				CDD1409821771A1200AD89B3 /* Info.plist */,
 				CDD1409021771A1200AD89B3 /* agent.xcdatamodeld */,
 			);
 			path = agent;
+			sourceTree = "<group>";
+		};
+		CDD1409E21771A3900AD89B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDD1408D21771A1200AD89B3 /* Main.storyboard */,
+				CDD1409521771A1200AD89B3 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDD1409F21771A4B00AD89B3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDD1408921771A1200AD89B3 /* AppDelegate.swift */,
+				CDD1408B21771A1200AD89B3 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDD140A021771A5400AD89B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
