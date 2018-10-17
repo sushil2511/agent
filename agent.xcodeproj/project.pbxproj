@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D713E21775541006902E9 /* RegisterViewController.swift */; };
+		CD4D714121775E39006902E9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D714021775E39006902E9 /* UserViewController.swift */; };
 		CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408921771A1200AD89B3 /* AppDelegate.swift */; };
 		CDD1408C21771A1200AD89B3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408B21771A1200AD89B3 /* HomeController.swift */; };
 		CDD1408F21771A1200AD89B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD1408D21771A1200AD89B3 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD4D713E21775541006902E9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CD4D714021775E39006902E9 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		CDD1408621771A1200AD89B3 /* agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD1408921771A1200AD89B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD1408B21771A1200AD89B3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 			children = (
 				CDD1408921771A1200AD89B3 /* AppDelegate.swift */,
 				CDD1408B21771A1200AD89B3 /* HomeController.swift */,
+				CD4D713E21775541006902E9 /* RegisterViewController.swift */,
+				CD4D714021775E39006902E9 /* UserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */,
+				CD4D714121775E39006902E9 /* UserViewController.swift in Sources */,
 				CDD1408C21771A1200AD89B3 /* HomeController.swift in Sources */,
 				CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */,
 				CDD1409221771A1200AD89B3 /* agent.xcdatamodeld in Sources */,
