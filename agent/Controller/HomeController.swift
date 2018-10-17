@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
 
+	@IBOutlet weak var email: UITextField!
+	@IBOutlet weak var password: UITextField!
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
@@ -22,6 +24,9 @@ class ViewController: UIViewController {
 		
 	}
 
-
+	@IBAction func onLogin(_ sender: UIButton) {
+		
+	}
+	
 }
 

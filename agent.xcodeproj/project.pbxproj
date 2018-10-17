@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408921771A1200AD89B3 /* AppDelegate.swift */; };
-		CDD1408C21771A1200AD89B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408B21771A1200AD89B3 /* ViewController.swift */; };
+		CDD1408C21771A1200AD89B3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408B21771A1200AD89B3 /* HomeController.swift */; };
 		CDD1408F21771A1200AD89B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD1408D21771A1200AD89B3 /* Main.storyboard */; };
 		CDD1409221771A1200AD89B3 /* agent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CDD1409021771A1200AD89B3 /* agent.xcdatamodeld */; };
 		CDD1409421771A1200AD89B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDD1409321771A1200AD89B3 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		CDD1408621771A1200AD89B3 /* agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD1408921771A1200AD89B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CDD1408B21771A1200AD89B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CDD1408B21771A1200AD89B3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		CDD1408E21771A1200AD89B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDD1409121771A1200AD89B3 /* agent.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = agent.xcdatamodel; sourceTree = "<group>"; };
 		CDD1409321771A1200AD89B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				CDD1408921771A1200AD89B3 /* AppDelegate.swift */,
-				CDD1408B21771A1200AD89B3 /* ViewController.swift */,
+				CDD1408B21771A1200AD89B3 /* HomeController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDD1408C21771A1200AD89B3 /* ViewController.swift in Sources */,
+				CDD1408C21771A1200AD89B3 /* HomeController.swift in Sources */,
 				CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */,
 				CDD1409221771A1200AD89B3 /* agent.xcdatamodeld in Sources */,
 			);
