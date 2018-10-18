@@ -1,0 +1,12 @@
+PODS:
+  - DatePickerDialog (2.0)
+
+DEPENDENCIES:
+  - DatePickerDialog (~> 2.0)
+
+SPEC CHECKSUMS:
+  DatePickerDialog: 5e1c24d9fe6506cd45dbc573eed7b0a251b1c09d
+
+PODFILE CHECKSUM: 0af146fc80cf556935d24d6d7c8881d4d893ca29
+
+COCOAPODS: 1.4.0
