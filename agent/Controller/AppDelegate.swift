@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import SwiftyJSON
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

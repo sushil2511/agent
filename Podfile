@@ -9,5 +9,8 @@ target 'agent' do
 
   # Pods for agent
   pod 'DatePickerDialog', '~> 2.0'
+  pod 'SVProgressHUD'
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
 
 end

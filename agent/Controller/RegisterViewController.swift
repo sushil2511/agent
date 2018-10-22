@@ -8,7 +8,8 @@
 
 import UIKit
 import DatePickerDialog
-
+import Alamofire
+import SwiftyJSON
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
@@ -19,6 +20,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var password: UITextField!
 	@IBOutlet weak var responseBox: UILabel!
 	@IBOutlet weak var passwordAgain: UITextField!
+	
+	let registerUrl = "http://agenthub.test/api/auth/register"
 	
 	
 	override func viewDidLoad() {
@@ -49,9 +52,46 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 	}
 	
 	@IBAction func onRegister(_ sender: Any) {
-		let valid = validateAll()
-		if !valid {
-			print("error")
+		let valid = true//validateAll()
+		if true || valid {
+			let formData : [String: AnyObject] = [
+				"name" : fname.text as AnyObject,
+				"email" : email.text as AnyObject,
+				"password" : password.text as AnyObject,
+				"password_confirmation" : passwordAgain.text as AnyObject
+			];
+			
+			let headers: HTTPHeaders = [
+				"Accept": "application/json"
+			]
+			
+			//Post request to server to create user
+			Alamofire.request(registerUrl, method: .post,  parameters: formData, encoding: JSONEncoding.default, headers: headers)
+				.responseJSON { response  in
+					if response.result.isSuccess {
+						let result = JSON(response.result.value!)
+						//form validation failed
+						if response.response?.statusCode == 422 {
+							var errors : String = ""
+							if let emailError = result["email"][0].string {
+								errors += "\(emailError)\n"
+							}
+							if let nameError = result["name"][0].string {
+								errors += "\(nameError)\n"
+							}
+							if let passwordError = result["password"][0].string {
+								errors += "\(passwordError)\n"
+							}
+							self.responseBox.text = errors
+							self.responseBox.textColor = .red
+						}else if response.response?.statusCode == 201 {		//Successsfully created user
+							self.responseBox.text = result["message"].string
+							self.responseBox.textColor = .black
+						}
+					} else {
+						print(response.result, response.result.isFailure)
+					}
+			}
 		}
 	
 	}
@@ -61,7 +101,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 		var message = ""
 		if (fname.text?.isEmpty)! {
 			valid = false;
-			message += "First name is required \n"
+			message += "Name is required \n"
 			fname.backgroundColor = .red
 		}
 		if (email.text?.isEmpty)! {
@@ -89,7 +129,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 		dateFormatterGet.dateFormat = "MM/dd/yyyy"
 		
 		if dateFormatterGet.date(from: birthdate.text!) != nil {
-			print("valid")
 		} else {
 			print("invalid date")
 			message += "Please select date"

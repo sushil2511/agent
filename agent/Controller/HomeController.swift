@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HomeController: UIViewController, UITextFieldDelegate {
 
@@ -28,9 +29,11 @@ class HomeController: UIViewController, UITextFieldDelegate {
 	}
 
 	@IBAction func onLogin(_ sender: UIButton) {
+		SVProgressHUD.show()
 		let valid = validateFields()
 		if valid {
-			print("error")
+			performSegue(withIdentifier: "goToDashboard", sender: self)
+			SVProgressHUD.dismiss()
 		}
 		
 	}

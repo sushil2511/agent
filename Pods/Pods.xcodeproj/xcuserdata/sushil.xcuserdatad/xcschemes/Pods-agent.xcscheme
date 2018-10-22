@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7EA857CC0E23034FB680EAB34A4793EA"
+               BlueprintIdentifier = "7A6ECC6B7AD97CA46C4D65BCD5DAABEF"
                BuildableName = "Pods_agent.framework"
                BlueprintName = "Pods-agent"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -30,15 +30,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CDD1408521771A1200AD89B3"
-            BuildableName = "agent.app"
-            BlueprintName = "agent"
-            ReferencedContainer = "container:../agent.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -53,16 +44,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CDD1408521771A1200AD89B3"
-            BuildableName = "agent.app"
-            BlueprintName = "agent"
-            ReferencedContainer = "container:../agent.xcodeproj">
+            BlueprintIdentifier = "7A6ECC6B7AD97CA46C4D65BCD5DAABEF"
+            BuildableName = "Pods_agent.framework"
+            BlueprintName = "Pods-agent"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -72,15 +62,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7EA857CC0E23034FB680EAB34A4793EA"
-            BuildableName = "Pods_agent.framework"
-            BlueprintName = "Pods-agent"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
