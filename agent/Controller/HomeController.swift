@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import SwiftyJSON
 
 class HomeController: UIViewController, UITextFieldDelegate {
 
@@ -15,11 +16,16 @@ class HomeController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var password: UITextField!
 	@IBOutlet weak var responser: UILabel!
 	
+	let user = User()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		email.delegate = self
 		password.delegate = self
-		// Do any additional setup after loading the view, typically from a nib.
+		
+		self.checkForSession()
+		
+//		user.getUserDetailsFromToken(token: UserDefaults.standard.string(forKey: "access_token")!)
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -28,16 +34,35 @@ class HomeController: UIViewController, UITextFieldDelegate {
 		
 	}
 
+	//onClick login button action
 	@IBAction func onLogin(_ sender: UIButton) {
 		SVProgressHUD.show()
 		let valid = validateFields()
 		if valid {
-			performSegue(withIdentifier: "goToDashboard", sender: self)
-			SVProgressHUD.dismiss()
+			var result : JSON = []
+			user.getAccessToken(email: email.text!, password: password.text!, completionHandler: {
+				(response, error) -> () in
+				if let token = response!["access_token"].string {
+					result = response!
+					self.user.saveTokenDetails(result: result)
+					SVProgressHUD.dismiss()
+					
+					self.goToDashboard()
+					
+				} else if response!["error"].string == "invalid_credentials" {
+					self.responser.text = "Invalid Credentials"
+					self.responser.textColor = .red
+				} else {
+					self.responser.text = "Opps, something went wrong! Try again."
+					self.responser.textColor = .red
+					SVProgressHUD.dismiss()
+				}
+			})
 		}
-		
+		SVProgressHUD.dismiss()
 	}
 	
+	//Function to validate login fields
 	func validateFields() -> Bool {
 		var valid = true
 		var message = ""
@@ -61,8 +86,26 @@ class HomeController: UIViewController, UITextFieldDelegate {
 		return valid
 	}
 	
+	//check if text field is started to edit make reset them
 	func textFieldDidBeginEditing(_ textField: UITextField) {
 		textField.backgroundColor = .white
+	}
+	
+	//Go to user dashboard controller view
+	func goToDashboard() {
+		let userHomeBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		guard let userControlVc = userHomeBoard.instantiateViewController(withIdentifier: "UserViewController") as? UserViewController else {
+			return
+		}
+		
+		present(userControlVc, animated: true, completion: nil)
+	}
+	
+	func checkForSession() {
+		let token = self.user.getExistingToken()
+		if !token.isEmpty {
+			self.goToDashboard()
+		}
 	}
 }
 

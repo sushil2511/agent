@@ -10,26 +10,63 @@ import UIKit
 
 class UserViewController: UIViewController {
 
-    override func viewDidLoad() {
+	var user = User()
+	
+	@IBOutlet weak var agentName: UILabel!
+	@IBOutlet weak var agentEmail: UILabel!
+	@IBOutlet weak var agentId: UILabel!
+	override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.		
+		self.checkSessionStatus()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	
+	//on logout button click function
+	@IBAction func logout(_ sender: UIButton) {
+		UserDefaults.standard.removeObject(forKey: "access_token")
+		UserDefaults.standard.removeObject(forKey: "token_type")
+		UserDefaults.standard.removeObject(forKey: "expires_in")
+		UserDefaults.standard.removeObject(forKey: "refresh_token")
+		self.goToHome()
+	}
+	
+	//check for session data and fetch user details accordingly
+	func checkSessionStatus() {
+		let token = self.user.getExistingToken()
+		if !token.isEmpty {
+			self.user.getUserDetailsFromToken(token: token,  completionHandler: {
+				(response, error) -> () in
+				if (error != nil) {
+					//todo go to login
+				}
+				if response!["id"].int != nil {
+					//Success
+					self.agentName.text = "Welcome Agent " + response!["name"].string!
+					self.agentEmail.text = response!["email"].string!
+					self.agentId.text = "00" + String(describing: response!["id"])
+					
+				} else if response!["error"].string != nil {
+					//todo go to login
+				} else {
+					//todo go to login
+				}
+			})
+		} else {
+			//TODO - Go back to login
+		}
+	}
+	
+	//Go to home controller view
+	func goToHome() {
+		let userHomeBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		guard let userControlVc = userHomeBoard.instantiateViewController(withIdentifier: "HomeController") as? HomeController else {
+			return
+		}
+		present(userControlVc, animated: true, completion: nil)
+	}
 }

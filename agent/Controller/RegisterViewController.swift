@@ -10,7 +10,7 @@ import UIKit
 import DatePickerDialog
 import Alamofire
 import SwiftyJSON
-
+import SVProgressHUD
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
 	
@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var passwordAgain: UITextField!
 	
 	let registerUrl = "http://agenthub.test/api/auth/register"
+	let user = User()
 	
 	
 	override func viewDidLoad() {
@@ -53,12 +54,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 	
 	@IBAction func onRegister(_ sender: Any) {
 		let valid = true//validateAll()
-		if true || valid {
-			let formData : [String: AnyObject] = [
-				"name" : fname.text as AnyObject,
-				"email" : email.text as AnyObject,
-				"password" : password.text as AnyObject,
-				"password_confirmation" : passwordAgain.text as AnyObject
+		SVProgressHUD.show()
+		if valid {
+			let formData : [String: String] = [
+				"name" : fname.text!,
+				"email" : email.text!,
+				"password" : password.text!,
+				"password_confirmation" : passwordAgain.text!
 			];
 			
 			let headers: HTTPHeaders = [
@@ -70,8 +72,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 				.responseJSON { response  in
 					if response.result.isSuccess {
 						let result = JSON(response.result.value!)
-						//form validation failed
-						if response.response?.statusCode == 422 {
+						switch response.response?.statusCode {
+						case 422?:
+							//form validation failed
 							var errors : String = ""
 							if let emailError = result["email"][0].string {
 								errors += "\(emailError)\n"
@@ -84,18 +87,47 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 							}
 							self.responseBox.text = errors
 							self.responseBox.textColor = .red
-						}else if response.response?.statusCode == 201 {		//Successsfully created user
+							break
+							
+						case 201?:
+							//Successsfully created user
 							self.responseBox.text = result["message"].string
 							self.responseBox.textColor = .black
+							
+							//get access token for a user
+							self.user.getAccessToken(email : formData["email"]!, password: formData["password"]!, completionHandler:  {
+								(response, error) -> () in
+								if let token = response!["access_token"].string {
+									let result = response!
+									self.user.saveTokenDetails(result: result)
+									SVProgressHUD.dismiss()
+									
+									self.goToDashboard()
+									
+								} else if response!["error"].string == "invalid_credentials" {
+									self.responseBox.text = "Invalid Credentials"
+									self.responseBox.textColor = .red
+								} else {
+									self.responseBox.text = "Opps, something went wrong! Try again."
+									self.responseBox.textColor = .red
+									SVProgressHUD.dismiss()
+								}
+							})
+							break
+						default:
+							return
 						}
 					} else {
 						print(response.result, response.result.isFailure)
+						SVProgressHUD.dismiss()
 					}
 			}
+			SVProgressHUD.dismiss()
 		}
 	
 	}
 	
+	//validate register form
 	func validateAll() -> Bool {
 		var valid = true
 		var message = ""
@@ -138,6 +170,16 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 		responseBox.text = "\(message)"
 	
 		return valid
+	}
+	
+	//Go to user dashboard controller view
+	func goToDashboard() {
+		let userHomeBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		guard let userControlVc = userHomeBoard.instantiateViewController(withIdentifier: "UserViewController") as? UserViewController else {
+			return
+		}
+		
+		present(userControlVc, animated: true, completion: nil)
 	}
 	
 }

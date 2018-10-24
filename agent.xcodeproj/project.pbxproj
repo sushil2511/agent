@@ -10,6 +10,8 @@
 		C6D8D1B379509EBE73BBCA4C /* Pods_agent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F826A1D6A946FCDD240C00BE /* Pods_agent.framework */; };
 		CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D713E21775541006902E9 /* RegisterViewController.swift */; };
 		CD4D714121775E39006902E9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D714021775E39006902E9 /* UserViewController.swift */; };
+		CD4DEB3E217EFB7E00682B2B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD4DEB3D217EFB7E00682B2B /* Settings.bundle */; };
+		CDCE019821803BAE00382AB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE019721803BAE00382AB6 /* User.swift */; };
 		CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408921771A1200AD89B3 /* AppDelegate.swift */; };
 		CDD1408C21771A1200AD89B3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408B21771A1200AD89B3 /* HomeController.swift */; };
 		CDD1408F21771A1200AD89B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD1408D21771A1200AD89B3 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 		8DD3AC9B8C657793A77A8C8B /* Pods-agent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agent.release.xcconfig"; path = "Pods/Target Support Files/Pods-agent/Pods-agent.release.xcconfig"; sourceTree = "<group>"; };
 		CD4D713E21775541006902E9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CD4D714021775E39006902E9 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		CD4DEB3D217EFB7E00682B2B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		CDCE019721803BAE00382AB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CDD1408621771A1200AD89B3 /* agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD1408921771A1200AD89B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDD1408B21771A1200AD89B3 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CD4DEB3C217EF35900682B2B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD4DEB3D217EFB7E00682B2B /* Settings.bundle */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CDD1407D21771A1200AD89B3 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +93,7 @@
 				CDD1409E21771A3900AD89B3 /* View */,
 				CDD1409321771A1200AD89B3 /* Assets.xcassets */,
 				CDD1409821771A1200AD89B3 /* Info.plist */,
+				CD4DEB3C217EF35900682B2B /* Supporting Files */,
 				CDD1409021771A1200AD89B3 /* agent.xcdatamodeld */,
 			);
 			path = agent;
@@ -109,6 +122,7 @@
 		CDD140A021771A5400AD89B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CDCE019721803BAE00382AB6 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD4DEB3E217EFB7E00682B2B /* Settings.bundle in Resources */,
 				CDD1409721771A1200AD89B3 /* LaunchScreen.storyboard in Resources */,
 				CDD1409421771A1200AD89B3 /* Assets.xcassets in Resources */,
 				CDD1408F21771A1200AD89B3 /* Main.storyboard in Resources */,
@@ -258,6 +273,7 @@
 			files = (
 				CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */,
 				CD4D714121775E39006902E9 /* UserViewController.swift in Sources */,
+				CDCE019821803BAE00382AB6 /* User.swift in Sources */,
 				CDD1408C21771A1200AD89B3 /* HomeController.swift in Sources */,
 				CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */,
 				CDD1409221771A1200AD89B3 /* agent.xcdatamodeld in Sources */,
