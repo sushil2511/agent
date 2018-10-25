@@ -24,8 +24,6 @@ class HomeController: UIViewController, UITextFieldDelegate {
 		password.delegate = self
 		
 		self.checkForSession()
-		
-//		user.getUserDetailsFromToken(token: UserDefaults.standard.string(forKey: "access_token")!)
 	}
 
 	override func didReceiveMemoryWarning() {

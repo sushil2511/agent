@@ -28,11 +28,17 @@ class UserViewController: UIViewController {
 	
 	//on logout button click function
 	@IBAction func logout(_ sender: UIButton) {
-		UserDefaults.standard.removeObject(forKey: "access_token")
-		UserDefaults.standard.removeObject(forKey: "token_type")
-		UserDefaults.standard.removeObject(forKey: "expires_in")
-		UserDefaults.standard.removeObject(forKey: "refresh_token")
-		self.goToHome()
+		user.logout() {
+			(response, error) in
+			if (error != nil) {
+				print(error)
+			}
+			if (response!["message"].string != nil) {
+				KeychainWrapper.standard.removeAllKeys()
+				self.goToHome()
+			}
+			print(response)
+		}
 	}
 	
 	//check for session data and fetch user details accordingly
@@ -46,7 +52,7 @@ class UserViewController: UIViewController {
 				}
 				if response!["id"].int != nil {
 					//Success
-					self.agentName.text = "Welcome Agent " + response!["name"].string!
+					self.agentName.text = "Agent " + response!["name"].string!
 					self.agentEmail.text = response!["email"].string!
 					self.agentId.text = "00" + String(describing: response!["id"])
 					

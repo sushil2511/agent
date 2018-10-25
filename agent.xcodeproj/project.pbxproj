@@ -11,6 +11,8 @@
 		CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D713E21775541006902E9 /* RegisterViewController.swift */; };
 		CD4D714121775E39006902E9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D714021775E39006902E9 /* UserViewController.swift */; };
 		CD4DEB3E217EFB7E00682B2B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD4DEB3D217EFB7E00682B2B /* Settings.bundle */; };
+		CD96BA202181A24100DE2557 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96BA1F2181A24000DE2557 /* KeychainWrapper.swift */; };
+		CD96BA222181A25D00DE2557 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96BA212181A25C00DE2557 /* KeychainItemAccessibility.swift */; };
 		CDCE019821803BAE00382AB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCE019721803BAE00382AB6 /* User.swift */; };
 		CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408921771A1200AD89B3 /* AppDelegate.swift */; };
 		CDD1408C21771A1200AD89B3 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD1408B21771A1200AD89B3 /* HomeController.swift */; };
@@ -26,6 +28,8 @@
 		CD4D713E21775541006902E9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CD4D714021775E39006902E9 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		CD4DEB3D217EFB7E00682B2B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		CD96BA1F2181A24000DE2557 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		CD96BA212181A25C00DE2557 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
 		CDCE019721803BAE00382AB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CDD1408621771A1200AD89B3 /* agent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = agent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD1408921771A1200AD89B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		CD4DEB3C217EF35900682B2B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD96BA212181A25C00DE2557 /* KeychainItemAccessibility.swift */,
+				CD96BA1F2181A24000DE2557 /* KeychainWrapper.swift */,
 				CD4DEB3D217EFB7E00682B2B /* Settings.bundle */,
 			);
 			path = "Supporting Files";
@@ -274,7 +280,9 @@
 				CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */,
 				CD4D714121775E39006902E9 /* UserViewController.swift in Sources */,
 				CDCE019821803BAE00382AB6 /* User.swift in Sources */,
+				CD96BA202181A24100DE2557 /* KeychainWrapper.swift in Sources */,
 				CDD1408C21771A1200AD89B3 /* HomeController.swift in Sources */,
+				CD96BA222181A25D00DE2557 /* KeychainItemAccessibility.swift in Sources */,
 				CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */,
 				CDD1409221771A1200AD89B3 /* agent.xcdatamodeld in Sources */,
 			);
