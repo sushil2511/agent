@@ -8,9 +8,10 @@ target 'agent' do
   use_frameworks!
 
   # Pods for agent
-  pod 'DatePickerDialog', '~> 2.0'
-  pod 'SVProgressHUD'
-  pod 'SwiftyJSON'
-  pod 'Alamofire'
+  pod 'DatePickerDialog', '~> 2.0'		#date picker
+  pod 'SVProgressHUD'					#loader
+  pod 'SwiftyJSON'						#json object handler
+  pod 'Alamofire'						#http request helper
+  pod 'Charts', '~> 3.1.1'							#iOS charts
 
 end

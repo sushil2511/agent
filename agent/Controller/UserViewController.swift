@@ -37,7 +37,6 @@ class UserViewController: UIViewController {
 				KeychainWrapper.standard.removeAllKeys()
 				self.goToHome()
 			}
-			print(response)
 		}
 	}
 	

@@ -44,9 +44,7 @@ class HomeController: UIViewController, UITextFieldDelegate {
 					result = response!
 					self.user.saveTokenDetails(result: result)
 					SVProgressHUD.dismiss()
-					
 					self.goToDashboard()
-					
 				} else if response!["error"].string == "invalid_credentials" {
 					self.responser.text = "Invalid Credentials"
 					self.responser.textColor = .red
