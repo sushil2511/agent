@@ -10,34 +10,65 @@ import Foundation
 import UIKit
 import Charts
 
+//extension for random color generate
+//calculate color value
+extension CGFloat {
+	static func random() -> CGFloat {
+		return CGFloat(arc4random()) / CGFloat(UInt32.max)
+	}
+}
+
+//add random value to RGB color object
+extension UIColor {
+	static func random() -> UIColor {
+		return UIColor(red:   .random(),
+					   green: .random(),
+					   blue:  .random(),
+					   alpha: 1.0)
+	}
+}
+
+
 class AnalyticController: UIViewController {
 	
 	@IBOutlet weak var piechart: PieChartView!
 	
-	var valueOne = PieChartDataEntry(value: 0)
-	var valueTwo = PieChartDataEntry(value: 0)
 	var dataEntries = [PieChartDataEntry]()
+	let wdata = WorldData()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
-	
-		valueOne.value = Double(arc4random_uniform(100))
-		valueOne.label = "Item 1"
-		valueTwo.value = Double(arc4random_uniform(100))
-		valueTwo.label = "Item 2"
-		
-		dataEntries = [valueOne, valueTwo]
+
 		updateChart()
 	}
 	
+	//Fuction tu update chart values
 	func updateChart() {
-		let chartDataSet = PieChartDataSet(values: dataEntries, label: "Sample")
-		let chartData = PieChartData(dataSet: chartDataSet)
+		var colors : [UIColor] = []
+		wdata.getPopulation(completionHandler: {
+			(response, error) -> () in
+			if (error != nil) {
+				print(error)
+			}
+			response?.forEach{
+				(key, value) in
+				let element = PieChartDataEntry(value: Double(value["population"].int!))
+				element.label = value["country_name"].string!
+				self.dataEntries.append(element)
+				colors.append(.random())
+			}
+			
+			let chartDataSet = PieChartDataSet(values: self.dataEntries, label: nil)
+			let chartData = PieChartData(dataSet: chartDataSet)
+			
+			chartDataSet.colors = colors
+			self.piechart.data = chartData
+			
+		})
 		
-		let colors = [UIColor(ciColor: .red), UIColor(ciColor: .green)]
-		chartDataSet.colors = colors
-		piechart.data = chartData
+
 
 	}
-	
+
 }

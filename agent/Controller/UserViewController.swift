@@ -48,6 +48,7 @@ class UserViewController: UIViewController {
 				(response, error) -> () in
 				if (error != nil) {
 					//todo go to login
+					print(error)
 				}
 				if response!["id"].int != nil {
 					//Success
@@ -57,6 +58,9 @@ class UserViewController: UIViewController {
 					
 				} else if response!["error"].string != nil {
 					//todo go to login
+					print("error in login:", response)
+					KeychainWrapper.standard.removeAllKeys()
+					self.goToHome()
 				} else {
 					//todo go to login
 				}

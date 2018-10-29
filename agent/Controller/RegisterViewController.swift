@@ -190,4 +190,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 		present(userControlVc, animated: true, completion: nil)
 	}
 	
+
+	//textfield delegate to disable keyboard on birthday click
+	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+		if textField == birthdate {
+			return false
+		}
+		return true
+	}
 }

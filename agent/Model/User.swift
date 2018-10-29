@@ -10,13 +10,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class User {
-	
-	let grantType : String = "password"
-	let baseSiteUrl : String = "http://agenthub.test/"
-	let clientId : Int = 2
-	let clientSecret : String = "ljG0lCiVU6fWf9HjiL1WEPCb2NoqWLBXqt3HFNwh"
-	
+class User: MainModel {
+
 	
 	//function to get access token by authorizing user details - email, password
 	func getAccessToken(email : String, password : String, completionHandler: @escaping (JSON?, Error?) -> ()) {
