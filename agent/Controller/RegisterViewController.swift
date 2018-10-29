@@ -32,6 +32,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 		email.delegate = self
 		passwordAgain.delegate = self
 		password.delegate = self
+		responseBox.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +60,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 			let formData : [String: String] = [
 				"name" : fname.text!,
 				"email" : email.text!,
+				"birth_date" : birthdate.text!,
 				"password" : password.text!,
 				"password_confirmation" : passwordAgain.text!
 			];
@@ -71,19 +73,23 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 			Alamofire.request(registerUrl, method: .post,  parameters: formData, encoding: JSONEncoding.default, headers: headers)
 				.responseJSON { response  in
 					if response.result.isSuccess {
+						print(response)
 						let result = JSON(response.result.value!)
 						switch response.response?.statusCode {
 						case 422?:
 							//form validation failed
 							var errors : String = ""
 							if let emailError = result["email"][0].string {
-								errors += "\(emailError)\n"
+								errors += "\(emailError) \n"
 							}
 							if let nameError = result["name"][0].string {
-								errors += "\(nameError)\n"
+								errors += "\(nameError) \n"
 							}
 							if let passwordError = result["password"][0].string {
-								errors += "\(passwordError)\n"
+								errors += "\(passwordError) \n"
+							}
+							if let birthError = result["birth_date"][0].string {
+								errors += "\(birthError) \n"
 							}
 							self.responseBox.text = errors
 							self.responseBox.textColor = .red
@@ -122,9 +128,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 						SVProgressHUD.dismiss()
 					}
 			}
+			self.responseBox.setNeedsLayout()
+			self.responseBox.layoutIfNeeded()
 			SVProgressHUD.dismiss()
 		}
-	
+		SVProgressHUD.dismiss()
 	}
 	
 	//validate register form

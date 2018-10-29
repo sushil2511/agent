@@ -22,7 +22,7 @@ class HomeController: UIViewController, UITextFieldDelegate {
 		super.viewDidLoad()
 		email.delegate = self
 		password.delegate = self
-		
+		responser.text = ""
 		self.checkForSession()
 	}
 
@@ -53,6 +53,8 @@ class HomeController: UIViewController, UITextFieldDelegate {
 					self.responser.textColor = .red
 					SVProgressHUD.dismiss()
 				}
+				self.responser.setNeedsLayout()
+				self.responser.layoutIfNeeded()
 			})
 		}
 		SVProgressHUD.dismiss()

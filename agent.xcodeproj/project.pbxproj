@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD066F9E2186F649000CA272 /* WorldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD066F9D2186F649000CA272 /* WorldData.swift */; };
 		CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D713E21775541006902E9 /* RegisterViewController.swift */; };
 		CD4D714121775E39006902E9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D714021775E39006902E9 /* UserViewController.swift */; };
 		CD4DEB3E217EFB7E00682B2B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD4DEB3D217EFB7E00682B2B /* Settings.bundle */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		637E2BBE3802AA0937A1B015 /* Pods_agent.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_agent.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE949D61D7321D848295BD1 /* Pods-agent.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-agent.release.xcconfig"; path = "Pods/Target Support Files/Pods-agent/Pods-agent.release.xcconfig"; sourceTree = "<group>"; };
+		CD066F9D2186F649000CA272 /* WorldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldData.swift; sourceTree = "<group>"; };
 		CD4D713E21775541006902E9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CD4D714021775E39006902E9 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		CD4DEB3D217EFB7E00682B2B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CDCE019721803BAE00382AB6 /* User.swift */,
+				CD066F9D2186F649000CA272 /* WorldData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,8 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-agent/Pods-agent-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -231,8 +232,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
@@ -250,15 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-agent-checkManifestLockResult.txt",
 			);
@@ -274,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD066F9E2186F649000CA272 /* WorldData.swift in Sources */,
 				CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */,
 				CD4D714121775E39006902E9 /* UserViewController.swift in Sources */,
 				CDCE019821803BAE00382AB6 /* User.swift in Sources */,

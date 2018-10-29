@@ -15,7 +15,7 @@ class User {
 	let grantType : String = "password"
 	let baseSiteUrl : String = "http://agenthub.test/"
 	let clientId : Int = 2
-	let clientSecret : String = "yoLPmjF7TJ8gTliGuzFJWpksjT5QNpdm8pZwuXz7"
+	let clientSecret : String = "ljG0lCiVU6fWf9HjiL1WEPCb2NoqWLBXqt3HFNwh"
 	
 	
 	//function to get access token by authorizing user details - email, password
