@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class UserViewController: UIViewController {
 
 	var user = User()

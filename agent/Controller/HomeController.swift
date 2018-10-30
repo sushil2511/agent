@@ -18,23 +18,30 @@ class HomeController: UIViewController, UITextFieldDelegate {
 	
 	let user = User()
 	
+	//MARK: System methods
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		email.delegate = self
 		password.delegate = self
 		responser.text = ""
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
 		self.checkForSession()
 	}
-
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
-		
 	}
+	
+	
 
+	//MARK: Login functionality
 	//onClick login button action
 	@IBAction func onLogin(_ sender: UIButton) {
 		SVProgressHUD.show()
+		SVProgressHUD.setDefaultStyle(.dark)
 		let valid = validateFields()
 		if valid {
 			var result : JSON = []
@@ -56,6 +63,8 @@ class HomeController: UIViewController, UITextFieldDelegate {
 				self.responser.setNeedsLayout()
 				self.responser.layoutIfNeeded()
 			})
+		}else {
+			SVProgressHUD.showError(withStatus: "Opps")
 		}
 		SVProgressHUD.dismiss()
 	}
@@ -89,10 +98,11 @@ class HomeController: UIViewController, UITextFieldDelegate {
 		textField.backgroundColor = .white
 	}
 	
+	//MARK: Go to dashboard
 	//Go to user dashboard controller view
 	func goToDashboard() {
 		let userHomeBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		guard let userControlVc = userHomeBoard.instantiateViewController(withIdentifier: "UserViewController") as? UserViewController else {
+		guard let userControlVc = userHomeBoard.instantiateViewController(withIdentifier: "NavigationViewController") as? NavigationViewController else {
 			return
 		}
 		

@@ -12,6 +12,11 @@
 		CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D713E21775541006902E9 /* RegisterViewController.swift */; };
 		CD4D714121775E39006902E9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4D714021775E39006902E9 /* UserViewController.swift */; };
 		CD4DEB3E217EFB7E00682B2B /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CD4DEB3D217EFB7E00682B2B /* Settings.bundle */; };
+		CD5BFCD721882F43005EE8CD /* ItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BFCD521882F43005EE8CD /* ItemViewCell.swift */; };
+		CD5BFCD821882F43005EE8CD /* ItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD5BFCD621882F43005EE8CD /* ItemViewCell.xib */; };
+		CD5BFCDA21883015005EE8CD /* CountryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BFCD921883015005EE8CD /* CountryListController.swift */; };
+		CD5BFCDD21884306005EE8CD /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BFCDC21884306005EE8CD /* Country.swift */; };
+		CD5BFCDF21886754005EE8CD /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5BFCDE21886754005EE8CD /* NavigationViewController.swift */; };
 		CD618AC72181D7AF0032C3D0 /* AnalyticController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD618AC62181D7AF0032C3D0 /* AnalyticController.swift */; };
 		CD96BA202181A24100DE2557 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96BA1F2181A24000DE2557 /* KeychainWrapper.swift */; };
 		CD96BA222181A25D00DE2557 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD96BA212181A25C00DE2557 /* KeychainItemAccessibility.swift */; };
@@ -33,6 +38,11 @@
 		CD4D713E21775541006902E9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CD4D714021775E39006902E9 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		CD4DEB3D217EFB7E00682B2B /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		CD5BFCD521882F43005EE8CD /* ItemViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewCell.swift; sourceTree = "<group>"; };
+		CD5BFCD621882F43005EE8CD /* ItemViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemViewCell.xib; sourceTree = "<group>"; };
+		CD5BFCD921883015005EE8CD /* CountryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListController.swift; sourceTree = "<group>"; };
+		CD5BFCDC21884306005EE8CD /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		CD5BFCDE21886754005EE8CD /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		CD618AC62181D7AF0032C3D0 /* AnalyticController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticController.swift; sourceTree = "<group>"; };
 		CD96BA1F2181A24000DE2557 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		CD96BA212181A25C00DE2557 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
@@ -78,6 +88,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CD5BFCDB2188305C005EE8CD /* Costom cell */ = {
+			isa = PBXGroup;
+			children = (
+				CD5BFCD521882F43005EE8CD /* ItemViewCell.swift */,
+				CD5BFCD621882F43005EE8CD /* ItemViewCell.xib */,
+			);
+			path = "Costom cell";
+			sourceTree = "<group>";
+		};
 		CDD1407D21771A1200AD89B3 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +134,7 @@
 			children = (
 				CDD1408D21771A1200AD89B3 /* Main.storyboard */,
 				CDD1409521771A1200AD89B3 /* LaunchScreen.storyboard */,
+				CD5BFCDB2188305C005EE8CD /* Costom cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +147,8 @@
 				CD4D713E21775541006902E9 /* RegisterViewController.swift */,
 				CD4D714021775E39006902E9 /* UserViewController.swift */,
 				CD618AC62181D7AF0032C3D0 /* AnalyticController.swift */,
+				CD5BFCD921883015005EE8CD /* CountryListController.swift */,
+				CD5BFCDE21886754005EE8CD /* NavigationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -137,6 +159,7 @@
 				CDCE019721803BAE00382AB6 /* User.swift */,
 				CD066F9D2186F649000CA272 /* WorldData.swift */,
 				CD066F9F218704D6000CA272 /* MainModel.swift */,
+				CD5BFCDC21884306005EE8CD /* Country.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +238,7 @@
 				CDD1409721771A1200AD89B3 /* LaunchScreen.storyboard in Resources */,
 				CDD1409421771A1200AD89B3 /* Assets.xcassets in Resources */,
 				CDD1408F21771A1200AD89B3 /* Main.storyboard in Resources */,
+				CD5BFCD821882F43005EE8CD /* ItemViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +296,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5BFCDD21884306005EE8CD /* Country.swift in Sources */,
 				CD066F9E2186F649000CA272 /* WorldData.swift in Sources */,
 				CD4D713F21775541006902E9 /* RegisterViewController.swift in Sources */,
+				CD5BFCDF21886754005EE8CD /* NavigationViewController.swift in Sources */,
 				CD4D714121775E39006902E9 /* UserViewController.swift in Sources */,
 				CDCE019821803BAE00382AB6 /* User.swift in Sources */,
 				CD96BA202181A24100DE2557 /* KeychainWrapper.swift in Sources */,
@@ -281,8 +307,10 @@
 				CD066FA0218704D6000CA272 /* MainModel.swift in Sources */,
 				CD96BA222181A25D00DE2557 /* KeychainItemAccessibility.swift in Sources */,
 				CDD1408A21771A1200AD89B3 /* AppDelegate.swift in Sources */,
+				CD5BFCD721882F43005EE8CD /* ItemViewCell.swift in Sources */,
 				CDD1409221771A1200AD89B3 /* agent.xcdatamodeld in Sources */,
 				CD618AC72181D7AF0032C3D0 /* AnalyticController.swift in Sources */,
+				CD5BFCDA21883015005EE8CD /* CountryListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

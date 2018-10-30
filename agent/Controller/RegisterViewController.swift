@@ -183,7 +183,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 	//Go to user dashboard controller view
 	func goToDashboard() {
 		let userHomeBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-		guard let userControlVc = userHomeBoard.instantiateViewController(withIdentifier: "UserViewController") as? UserViewController else {
+		guard let userControlVc = userHomeBoard.instantiateViewController(withIdentifier: "NavigationViewController") as? UserViewController else {
 			return
 		}
 		
