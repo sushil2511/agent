@@ -58,7 +58,7 @@ class AnalyticController: UIViewController, UIScrollViewDelegate, ChartViewDeleg
 			frame.origin.x = scrollView.frame.size.width * CGFloat(index)
 			frame.size.width = scrollView.frame.size.width
 			frame.size.height = scrollView.frame.size.height
-			scrollView.backgroundColor = .random()
+//			scrollView.backgroundColor = .random()
 			print(scrollView.frame.width, scrollView.frame.height)
 			switch index {
 			case 0:
@@ -93,7 +93,7 @@ class AnalyticController: UIViewController, UIScrollViewDelegate, ChartViewDeleg
 		wdata.getPopulation(completionHandler: {
 			(response, error) -> () in
 			if (error != nil) {
-				print(error)
+				print(error ?? "error occured in pie chart data")
 			}
 			response?.forEach{
 				(key, value) in
@@ -119,11 +119,11 @@ class AnalyticController: UIViewController, UIScrollViewDelegate, ChartViewDeleg
 	}
 	
 	func getLineChartData() {
-		var dataPoints = ["Mon", "Tue", "Wed", "The", "Fri", "sat", "sun"]
-		var values = [45.2, 151, 120, 26, 78, 120, 99, 124, 62, 49, 55]
+		let dataPoints = ["Mon", "Tue", "Wed", "The", "Fri", "sat", "sun"]
+		var values = [45.2, 151, 120, 78, 65, 134, 99, 124, 62, 49, 55]
 		lineChart.delegate = self
 		var dataEntries: [ChartDataEntry] = []
-		var days: [String] = []
+		var _: [String] = []
 		for i in 0..<dataPoints.count {
 			let entry = ChartDataEntry(x: values[i], y: Double(i))
 			dataEntries.append(entry)

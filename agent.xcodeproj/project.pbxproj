@@ -97,6 +97,27 @@
 			path = "Costom cell";
 			sourceTree = "<group>";
 		};
+		CD9F42C221896CA800FA81D5 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				CDD1408921771A1200AD89B3 /* AppDelegate.swift */,
+				CD5BFCDE21886754005EE8CD /* NavigationViewController.swift */,
+			);
+			path = MainController;
+			sourceTree = "<group>";
+		};
+		CD9F42C321896D6600FA81D5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CDD1408B21771A1200AD89B3 /* HomeController.swift */,
+				CD4D713E21775541006902E9 /* RegisterViewController.swift */,
+				CD4D714021775E39006902E9 /* UserViewController.swift */,
+				CD618AC62181D7AF0032C3D0 /* AnalyticController.swift */,
+				CD5BFCD921883015005EE8CD /* CountryListController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		CDD1407D21771A1200AD89B3 = {
 			isa = PBXGroup;
 			children = (
@@ -142,13 +163,8 @@
 		CDD1409F21771A4B00AD89B3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CDD1408921771A1200AD89B3 /* AppDelegate.swift */,
-				CDD1408B21771A1200AD89B3 /* HomeController.swift */,
-				CD4D713E21775541006902E9 /* RegisterViewController.swift */,
-				CD4D714021775E39006902E9 /* UserViewController.swift */,
-				CD618AC62181D7AF0032C3D0 /* AnalyticController.swift */,
-				CD5BFCD921883015005EE8CD /* CountryListController.swift */,
-				CD5BFCDE21886754005EE8CD /* NavigationViewController.swift */,
+				CD9F42C321896D6600FA81D5 /* ViewController */,
+				CD9F42C221896CA800FA81D5 /* MainController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

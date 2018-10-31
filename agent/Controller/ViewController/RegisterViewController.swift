@@ -21,7 +21,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var responseBox: UILabel!
 	@IBOutlet weak var passwordAgain: UITextField!
 	
-	let registerUrl = "http://agenthub.test/api/auth/register"
 	let user = User()
 	
 	
@@ -54,6 +53,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 	}
 	
 	@IBAction func onRegister(_ sender: Any) {
+		let registerUrl = "\(user.baseSiteUrl)api/auth/register"
 		let valid = true//validateAll()
 		SVProgressHUD.show()
 		if valid {

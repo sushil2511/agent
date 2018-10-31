@@ -31,7 +31,7 @@ class UserViewController: UIViewController {
 		user.logout() {
 			(response, error) in
 			if (error != nil) {
-				print(error)
+				print(error as Any)
 			}
 			if (response!["message"].string != nil) {
 				KeychainWrapper.standard.removeAllKeys()
@@ -48,7 +48,7 @@ class UserViewController: UIViewController {
 				(response, error) -> () in
 				if (error != nil) {
 					//todo go to login
-					print(error)
+					print(error as Any)
 				}
 				if response!["id"].int != nil {
 					//Success
@@ -58,7 +58,7 @@ class UserViewController: UIViewController {
 					
 				} else if response!["error"].string != nil {
 					//todo go to login
-					print("error in login:", response)
+					print("error in login:", response ?? "login error")
 					KeychainWrapper.standard.removeAllKeys()
 					self.goToHome()
 				} else {
